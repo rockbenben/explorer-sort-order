@@ -1,10 +1,11 @@
 {
   "name": "explorer-sort-order",
   "displayName": "Explorer Sort Order",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Toggle sort order in the Explorer panel between 'modified' and 'default'.",
   "publisher": "qingshun",
   "license": "MIT",
+  "icon": "logo.png",
   "repository": {
       "type": "git",
       "url": "https://github.com/rockbenben/explorer-sort-order.git"
