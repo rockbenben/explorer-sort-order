@@ -1,0 +1,58 @@
+{
+  "name": "explorer-sort-order",
+  "displayName": "Explorer Sort Order",
+  "version": "0.0.1",
+  "description": "Toggle sort order in the Explorer panel between 'modified' and 'default'.",
+  "publisher": "qingshun",
+  "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/rockbenben/explorer-sort-order.git"
+  },
+  "bugs": {
+      "url": "https://github.com/rockbenben/explorer-sort-order/issues"
+  },
+  "homepage": "https://github.com/rockbenben/explorer-sort-order#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+        {
+            "command": "extension.toggleExplorerSortOrder",
+            "title": "Toggle Explorer Sort Order"
+        }
+    ],
+    "keybindings": [
+        {
+            "command": "extension.toggleExplorerSortOrder",
+            "key": "ctrl+f10",
+            "when": "explorerViewletVisible"
+        }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
