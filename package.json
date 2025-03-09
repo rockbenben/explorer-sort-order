@@ -1,7 +1,7 @@
 {
   "name": "explorer-sort-order",
   "displayName": "Explorer Sort Order",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Toggle sort order in the Explorer panel between 'modified' and 'default'.",
   "publisher": "qingshun",
   "license": "MIT",
@@ -33,6 +33,7 @@
         {
             "command": "extension.toggleExplorerSortOrder",
             "key": "ctrl+f10",
+            "mac": "cmd+f10",
             "when": "explorerViewletVisible"
         }
     ]
@@ -42,18 +43,18 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
-    "lint": "eslint src --ext ts",
+    "lint": "eslint src",
     "test": "vscode-test"
   },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "18.x",
-    "@typescript-eslint/eslint-plugin": "^6.19.1",
-    "@typescript-eslint/parser": "^6.19.1",
-    "eslint": "^8.56.0",
-    "typescript": "^5.3.3",
-    "@vscode/test-cli": "^0.0.4",
-    "@vscode/test-electron": "^2.3.9"
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
+    "eslint": "^9.21.0",
+    "typescript": "^5.7.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
   }
 }
