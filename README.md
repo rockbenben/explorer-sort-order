@@ -1,28 +1,46 @@
 # Explorer Sort Order
 
-This VSCode extension allows users to quickly toggle the sort order of files in the Explorer panel between 'By Last Modified' and 'By Name' using the `Ctrl+F10` shortcut.
+A lightweight VS Code extension that lets you instantly switch file sorting in the Explorer panel between 'By Name' and 'By Last Modified' using either the `Ctrl+F10` keyboard shortcut or a convenient toolbar button.
 
-使用 `Ctrl+F10` 可切换资源管理器的文件排序方式，实现默认的按名称排序与按最后修改时间排序之间的切换。
+![](https://img.newzone.top/2025-03-15-12-56-36.png?imageMogr2/format/webp)
+
+可通过 `Ctrl+F10`（Windows/Linux）或 `Cmd+F10`（Mac）快捷键或工具栏按钮，一键切换资源管理器中的文件排序方式，在"按名称"和"按最后修改时间"之间快速切换。
 
 ## Features
 
-- **Toggle Sort Order**: With a simple keyboard shortcut, users can switch the sort order of files in the Explorer panel between 'By Last Modified' and 'By Name'.
-- **User Friendly**: The extension is straightforward to use with minimal configuration required.
+- **One-Click Toggle:** Switch sorting methods with either a keyboard shortcut or the Explorer toolbar button
+- **Visual Feedback:** Receive a notification confirming your current sort order
+- **Zero Configuration:** Works immediately after installation with no setup required
+- **Customizable:** Keep your preferred sort order between VS Code sessions
+
+## Usage
+
+- Press `Ctrl+F10` (Windows/Linux) or `Cmd+F10` (Mac) to toggle sorting
+- Click the sort toggle button in the Explorer panel's title bar
+- Receive instant visual confirmation of the current sort order
 
 ## Extension Settings
 
-This extension contributes the following settings:
+This extension uses VS Code's built-in settings:
 
-- `explorer.sortOrder`: set to 'modified' or 'default' to specify the default sort order when VSCode starts.
+- `explorer.sortOrder`: Controls the default sort order ('modified' or 'default')
 
-## Keybindings
+## Keyboard Shortcuts
 
-- `Ctrl+F10`: Toggle the sort order of files in the Explorer panel between 'By Last Modified' and 'By Name'.
+- **Windows/Linux:** `Ctrl+F10`
+- **Mac:** `Cmd+F10`
 
 ## Release Notes
 
+### 0.0.6
+
+- Added toolbar button for easier access
+
+### 0.0.5
+
+- feat: add default hotkey support for Mac
+- refactor: improve user feedback with more descriptive messages
+
 ### 0.0.1
 
-Initial release of Explorer Sort Order:
-
-- Toggle sort order between 'modified' and 'default'.
+- Initial release with keyboard shortcut functionality

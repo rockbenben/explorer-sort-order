@@ -1,8 +1,8 @@
 {
   "name": "explorer-sort-order",
   "displayName": "Explorer Sort Order",
-  "version": "0.0.5",
-  "description": "Toggle sort order in the Explorer panel between 'modified' and 'default'.",
+  "version": "0.0.6",
+  "description": "Toggle sort order in the Explorer panel between 'By Name' and 'By Last Modified' with a keyboard shortcut or toolbar button.",
   "publisher": "qingshun",
   "license": "MIT",
   "icon": "logo.png",
@@ -20,13 +20,16 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
         {
             "command": "extension.toggleExplorerSortOrder",
-            "title": "Toggle Explorer Sort Order"
+            "title": "Toggle Explorer Sort Order",
+            "icon": "$(list-filter)"
         }
     ],
     "keybindings": [
@@ -36,10 +39,20 @@
             "mac": "cmd+f10",
             "when": "explorerViewletVisible"
         }
-    ]
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "extension.toggleExplorerSortOrder",
+          "when": "view == workbench.explorer.fileView",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
+    "generated": "vsce package",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
@@ -50,9 +63,9 @@
     "@types/vscode": "^1.85.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
-    "@typescript-eslint/eslint-plugin": "^8.26.0",
-    "@typescript-eslint/parser": "^8.26.0",
-    "eslint": "^9.21.0",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "eslint": "^9.22.0",
     "typescript": "^5.7.3",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1"

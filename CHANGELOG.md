@@ -4,6 +4,11 @@ All notable changes to the "explorer-sort-order" extension will be documented in
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.6] - 2025-03-15
+
+- feat: add toggle button
+- chore: update deps
+
 ## [0.0.5] - 2025-03-10
 
 - feat: add default hotkey support for Mac
