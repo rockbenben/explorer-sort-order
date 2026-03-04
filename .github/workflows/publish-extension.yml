@@ -5,29 +5,19 @@ on:
     types: [published]
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
+      - uses: actions/checkout@v6
 
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "20"
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Install VSCE
-        run: npm install -g vsce
-
-      - name: Package Extension
-        run: vsce package
-
       - name: Publish Extension
-        env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
-        run: vsce publish -p $VSCE_PAT
+        run: npx @vscode/vsce publish -p ${{ secrets.VSCE_PAT }}
