@@ -1,29 +1,44 @@
 # Explorer Sort Order
 
-A lightweight VS Code extension that lets you instantly switch file sorting in the Explorer panel between 'By Name' and 'By Last Modified' using either the `Ctrl+F10` keyboard shortcut or a convenient toolbar button.
+A lightweight VS Code extension to quickly toggle file sorting in the Explorer panel. Supports all 6 sort modes with a configurable quick toggle, status bar indicator, and full selector.
 
 ![](https://img.newzone.top/2025-03-15-12-56-36.png?imageMogr2/format/webp)
 
-可通过 `Ctrl+F10`（Windows/Linux）或 `Cmd+F10`（Mac）快捷键或工具栏按钮，一键切换资源管理器中的文件排序方式，在"按名称"和"按最后修改时间"之间快速切换。
+一键切换资源管理器中的文件排序方式。支持全部 6 种排序模式，可通过快捷键 `Ctrl+F10`（Mac: `Cmd+F10`）、工具栏按钮或状态栏快速切换。默认在"按名称"和"按修改时间"之间切换，也可在设置中自定义切换的两种模式。通过命令面板运行 `Select Explorer Sort Order` 可从下拉列表中选择任意排序模式。
 
 ## Features
 
-- **One-Click Toggle:** Switch sorting methods with either a keyboard shortcut or the Explorer toolbar button
-- **Visual Feedback:** Receive a notification confirming your current sort order
-- **Zero Configuration:** Works immediately after installation with no setup required
-- **Customizable:** Keep your preferred sort order between VS Code sessions
+- **Quick Toggle:** Switch between two sort modes with `Ctrl+F10` / `Cmd+F10` or the toolbar button
+- **Status Bar Indicator:** Shows the current sort order at a glance, click to toggle
+- **All 6 Sort Modes:** By Name, By Modified, By Type, Files First, Mixed, Folders Nests Files
+- **Full Selector:** Use `Select Explorer Sort Order` command to pick any mode from a dropdown
+- **Configurable Toggle Pair:** Choose which two modes to toggle between in settings
+- **Workspace Aware:** Respects workspace vs global settings scope
 
 ## Usage
 
-- Press `Ctrl+F10` (Windows/Linux) or `Cmd+F10` (Mac) to toggle sorting
-- Click the sort toggle button in the Explorer panel's title bar
-- Receive instant visual confirmation of the current sort order
+- Press `Ctrl+F10` (Windows/Linux) or `Cmd+F10` (Mac) to quick toggle
+- Click the status bar item (bottom right) to toggle
+- Click the toolbar button in the Explorer panel title bar
+- Run `Select Explorer Sort Order` from the Command Palette to choose from all modes
+
+## Sort Modes
+
+| Mode                | Description                               |
+| ------------------- | ----------------------------------------- |
+| `default`           | By name, folders first                    |
+| `modified`          | By last modified date, descending         |
+| `type`              | Group by extension type, then by name     |
+| `filesFirst`        | Files before folders, by name             |
+| `mixed`             | Files and folders mixed together, by name |
+| `foldersNestsFiles` | Nested files displayed before other files |
 
 ## Extension Settings
 
-This extension uses VS Code's built-in settings:
-
-- `explorer.sortOrder`: Controls the default sort order ('modified' or 'default')
+| Setting                     | Default    | Description                       |
+| --------------------------- | ---------- | --------------------------------- |
+| `explorerSortOrder.toggleA` | `default`  | First sort mode for quick toggle  |
+| `explorerSortOrder.toggleB` | `modified` | Second sort mode for quick toggle |
 
 ## Keyboard Shortcuts
 
@@ -32,14 +47,23 @@ This extension uses VS Code's built-in settings:
 
 ## Release Notes
 
+### 1.0.0
+
+- Support all 6 explorer sort modes
+- Add `Select Explorer Sort Order` command with QuickPick selector
+- Add configurable toggle pair (`explorerSortOrder.toggleA` / `toggleB`)
+- Add status bar indicator with click-to-toggle
+- Fix workspace settings being overwritten by global scope
+- Switch to esbuild bundling for smaller package size
+
 ### 0.0.6
 
-- Added toolbar button for easier access
+- Add toolbar button for easier access
 
 ### 0.0.5
 
-- feat: add default hotkey support for Mac
-- refactor: improve user feedback with more descriptive messages
+- Add default hotkey support for Mac
+- Improve user feedback with more descriptive messages
 
 ### 0.0.1
 
